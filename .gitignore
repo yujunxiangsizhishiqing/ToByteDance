@@ -5,7 +5,6 @@
 .idea/misc.xml
 .idea/runConfigurations.xml
 .idea/vcs.xml
-.idea/.gitignore
 target/classes/com/Algorithm/leetcode/FindTheCentralIndexOfAnArray.class
 target/classes/com/Algorithm/leetcode/RemoveDuplicatesFromTheSortedArray.class
 target/classes/com/Algorithm/leetcode/SearchInsertLocation.class
