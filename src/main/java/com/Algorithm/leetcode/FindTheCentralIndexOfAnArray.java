@@ -55,9 +55,6 @@ public class FindTheCentralIndexOfAnArray {
         for (int num : nums) {
             sum = sum+num;
         }
-//        if (sum==0){
-//            return 0;
-//        }
         int subSum = 0;
         for (int index = 0;index<nums.length;index++){
             if (subSum == (sum-subSum+nums[index])){
