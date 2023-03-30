@@ -1,4 +1,4 @@
-package com.Algorithm.leetcode;
+package com.algorithm.leetcode;
 
 /**
  * https://leetcode.cn/leetbook/read/array-and-string/cxqdh/

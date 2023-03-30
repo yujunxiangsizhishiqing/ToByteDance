@@ -1,4 +1,4 @@
-package com.Algorithm.leetcode;
+package com.algorithm.leetcode;
 
 /**
  * https://leetcode.cn/leetbook/read/array-and-string/ceda1/
@@ -23,4 +23,14 @@ package com.Algorithm.leetcode;
  *
  * */
 public class LongestCommonPrefix {
+
+
+    public static void main(String[] args) {
+        String[] arr = new String[]{"dog","racecar","car"};
+        System.out.println(longestCommonPrefix(arr));
+    }
+
+    private static String longestCommonPrefix(String[] strs) {
+        return "";
+    }
 }

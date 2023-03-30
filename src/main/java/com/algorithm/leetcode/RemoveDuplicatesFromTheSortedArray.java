@@ -1,4 +1,4 @@
-package com.Algorithm.leetcode;
+package com.algorithm.leetcode;
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.Algorithm.leetcode;
+package com.algorithm.leetcode;
 
 /**
  * https://leetcode.cn/leetbook/read/array-and-string/c5tv3/
@@ -23,6 +23,8 @@ package com.Algorithm.leetcode;
  * */
 public class ConsolidationInterval {
 
-
+    public static void main(String[] args) {
+        Integer.valueOf()
+    }
 
 }
