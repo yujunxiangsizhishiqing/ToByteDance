@@ -24,7 +24,7 @@ package com.algorithm.leetcode;
 public class ConsolidationInterval {
 
     public static void main(String[] args) {
-        Integer.valueOf()
+        Integer integer = Integer.valueOf(10);
     }
 
 }
