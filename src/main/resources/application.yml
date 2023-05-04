@@ -1,0 +1,41 @@
+
+mybatis:
+  mapper-locations:
+    classpath:mapping/**/*.xml
+  configuration:
+    cache-enabled: true
+    jdbc-type-for-null: null
+sessionInfoName: sessionInfo
+sessionTimeout: 108000  #单位：秒 （30分钟）
+server:
+  port: 8081
+#DB_properties
+spring:
+  redis:
+    host: 172.18.200.67
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #mysql8.0
+    url: jdbc:mysql://172.18.200.67:3306/dev_aes?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: root
+    #    password: 1320wx121324588.
+    initial-size: 5
+    max-active: 20
+    min-idle: 10
+    max-wait: 10
+  servlet:
+    multipart:
+      max-file-size : 100MB
+      max-request-size : 150MB
+
+#mybatis_log_properties
+
+logging:
+  level:
+    com.sinosoft.aes.mapper: debug
+  config:
+    classpath: logback-spring.xml
+
+

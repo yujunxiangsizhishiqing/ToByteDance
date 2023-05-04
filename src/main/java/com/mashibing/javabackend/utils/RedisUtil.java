@@ -1,18 +1,21 @@
 package com.mashibing.javabackend.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 @Service
 public class RedisUtil {
-    @Autowired
+    @Resource
     private StringRedisTemplate stringRedisTemplate;
-
+    @Resource
+    private RedisTemplate redisTemplate;
 
     public void addString(String key,String value){
         ValueOperations valueOperations=stringRedisTemplate.opsForValue();
