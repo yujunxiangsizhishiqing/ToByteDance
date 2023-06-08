@@ -21,9 +21,12 @@ public class TestClass {
     @Resource
     RedisUtil redisUtil;
     public static void main(String[] args) {
-        //redis测试
+        
         TestClass testClass = new TestClass();
+        /*redis测试**/
+        //redisCtrTest测试
         //testClass.redisCtrTest();
+        //redisUtilTest测试
         testClass.redisUtilTest();
     }
 
