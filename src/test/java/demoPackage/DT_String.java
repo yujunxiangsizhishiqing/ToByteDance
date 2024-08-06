@@ -1,6 +1,9 @@
 package demoPackage;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DT_String {
 
@@ -14,11 +17,102 @@ public class DT_String {
 //        System.out.println(test3());
 
 
-        String str = "a b c";
-        String[] s = str.split(" ");
-        for (String s1 : s) {
-            System.out.println(s1);
-        }
+//        String str = "a b c";
+//        String[] s = str.split(" ");
+//        for (String s1 : s) {
+//            System.out.println(s1);
+//        }
+
+//        String str2 = "a b c\nd";
+//        System.out.println("old:"+str2);
+//        str2 = str2.replace(" ", "");
+//        str2 = str2.replace("\n", "");
+//        System.out.println("new:"+str2);
+
+//        String str = "Hello\nWorld";
+//        String newStr = str.replace("\n", " - ");
+//        System.out.println(newStr); // 输出 "Hello - World"
+
+//        String str3 = "";
+//        System.out.println(str3.concat("123"));
+
+//        String str = "王旭";
+//        System.out.println(str.length());
+
+
+//        String str = "a-b-c";
+//        String[] split = str.split("-");
+//        System.out.println(split[0]);
+//
+//        String str2 = "abc";
+//        String[] split2 = str2.split("-");
+//        System.out.println(split2[0]);
+
+//        String str = "a-b-c";
+//        int i = str.indexOf("*");
+//        System.out.println(i);
+//        System.out.println(str.substring(str.indexOf("-")+1,str.length()));
+
+//        String str = null;
+//        String[] split = str.split("-");
+
+//        String str = "";
+//        String[] split = str.split("-");
+//        System.out.println(split[1]);
+
+
+
+//        try {
+//            int a = 1/0;
+//        }
+//        catch (ArithmeticException e){
+//            System.out.println("ArithmeticException "+e);
+//        }
+//        catch (Exception e){
+//            System.out.println("Exception "+e);
+//        }finally {
+//            System.out.println("测试完成");
+//        }
+
+//        //String str = "aaaa";
+//        String str2 = "-a-b-c";
+//        System.out.println(str.indexOf("-"));
+//        //System.out.println(str.indexOf("*"));
+
+        //String str = "1";
+        //System.out.println(str);
+
+//        long a = 1;
+//        String format = String.format("%010d", a);
+//        System.out.println(format);
+//        String format2 = String.format("%010d", 222);
+//        System.out.println(format2);
+
+//        String str = String.format("%010d", 1);
+//        System.out.println(str);
+//        Long aLong = Long.valueOf(str);
+//        System.out.println(aLong);
+//        BigDecimal one = BigDecimal.ONE;
+//        String format = new DecimalFormat("0000000000").format(one);
+//        System.out.println(format);
+
+//        String str = "1";
+//        System.out.println(str.indexOf("-"));
+//        String str2 = "-1";
+//        System.out.println(str2.indexOf("-"));
+//        String str3 = "2024-07-09";
+//        System.out.println(str3.indexOf("-"));
+
+//        System.out.println(String.format("%02d", 6));
+//        System.out.println(String.format("%02d", 12));
+
+        Date date = new Date();
+        int year = date.getYear()+1900;
+        int month = date.getMonth();
+        System.out.println(year+"-"+(String.format("%02d",month)));
+
+
+        System.out.println("123".equals(null));
     }
 
     private static String test1(){

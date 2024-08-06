@@ -14,9 +14,9 @@ public class DT_JDBC {
 
     public static void main(String[] args) throws Exception {
         //查询其他数据库
-        //queryJdbc();
+        queryJdbc();
         //插入其他数据库
-        insertJdbc();
+        //insertJdbc();
     }
 
     private static void queryJdbc() throws Exception{
@@ -32,7 +32,8 @@ public class DT_JDBC {
         ResultSet resultSet = null;
         try {
             connection = dataSource.getConnection();
-            String sql = "SELECT TOP 5 A.* from LACOM A";
+            //String sql = "SELECT TOP 5 A.* from LACOM A";
+            String sql = "SELECT * FROM ljapay WHERE 1=1 LIMIT 0,1";
             pstmt = connection.prepareStatement(sql);
             resultSet = pstmt.executeQuery();
             for (;resultSet.next();){

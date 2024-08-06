@@ -70,12 +70,14 @@ public class DT_LocalDate {
 //        System.out.println(getCurrTimeDate("yyyy/MM/dd HH:mm:ss"));
 //        System.out.println(new Date());
 
-//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
-//        System.out.println(format.format(new Date()));
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(format.format(new Date()));
 
-        System.out.println(getCurrTimeStr("yyyy-MM-dd HH:mm:ss S"));
-        System.out.println(getCurrTimeStr("yyyyMMddHHmmssS"));
 
+//        System.out.println(getCurrTimeStr("yyyy-MM-dd HH:mm:ss S"));
+//        System.out.println(getCurrTimeStr("yyyyMMddHHmmssS"));
+//        System.out.println(getCurrTimeStr("HHmmss"));
+//        System.out.println(getCurrTimeStr("yyyy-MM-dd"));
     }
 
     private static Date getCurrTimeDate(String format){
@@ -123,8 +125,10 @@ public class DT_LocalDate {
             case "yyyy/MM/dd HH:mm:ss":
             case "yyyy-MM-dd HH:mm:ss S":
             case "yyyyMMddHHmmssS":
+            case "HHmmss":
                 LocalDateTime now = LocalDateTime.now();
                 return now.format(DateTimeFormatter.ofPattern(format));
+
             default:
                 //如有新的日期格式需求，添加新的case即可
                 //return null;
