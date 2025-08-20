@@ -16,16 +16,19 @@ public class DT_Stream {
     public static void main(String[] args) {
         //sumTest();
         DT_Stream dtStream = new DT_Stream();
-        dtStream.grpTest();
+//        dtStream.grpTest();
+//
+//        //System.out.println(DateUtil.parse("2024-01-01"));
+//        System.out.println("\n\n");
+//
+//        dtStream.grpTest2();
+//
+//        System.out.println("\n");
+//
+//        dtStream.test03();
 
-        //System.out.println(DateUtil.parse("2024-01-01"));
-        System.out.println("\n\n");
 
-        dtStream.grpTest2();
-
-        System.out.println("\n");
-
-        dtStream.test03();
+        dtStream.test04();
     }
 
 
@@ -109,6 +112,18 @@ public class DT_Stream {
                 .collect(Collectors.toList());
 
         System.out.println(bProperties);
+    }
+
+    private void test04(){
+        List<Item> list = Arrays.asList(
+                new Item("wx", "Television", 1),
+                new Item("wx", "Radio", 2),
+                new Item("wx", "Oven", 3),
+                new Item("xx", "Pan", 4),
+                new Item("xx", "Television", 5));
+        List<Item> result = list.stream().filter(s -> !s.getCategory().equals("wx")).collect(Collectors.toList());
+        System.out.println(list);
+        result.forEach(s-> System.out.println(s.getCategory()));
     }
 
     class Item2 {

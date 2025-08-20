@@ -25,12 +25,28 @@ public class DT_Date {
 //        System.out.println(year+"-"+(String.format("%02d",month)));
 
 
+
         try {
-            //Date parse = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2021-01-01");
-            Date parse = new SimpleDateFormat("yyyy-MM-dd").parse("2021-01-01 01:01:01");
-            System.out.println(parse.toString());
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+            Date date = new Date();
+            System.out.println(date.before(new SimpleDateFormat("yyyy-MM-dd").parse("2024-09-01")));
+
+            Date parse = new SimpleDateFormat("yyyy-MM-dd").parse("2024-09-01");
+            System.out.println(parse.before(new SimpleDateFormat("yyyy-MM-dd").parse("2024-09-01")));
+
+            Date parse2 = new SimpleDateFormat("yyyy-MM-dd").parse("2024-08-31");
+            System.out.println(parse2.before(new SimpleDateFormat("yyyy-MM-dd").parse("2024-09-01")));
+
+
+        }catch (Exception e){
+
         }
+
+//        try {
+//            //Date parse = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2021-01-01");
+//            Date parse = new SimpleDateFormat("yyyy-MM-dd").parse("2021-01-01 01:01:01");
+//            System.out.println(parse.toString());
+//        } catch (ParseException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }

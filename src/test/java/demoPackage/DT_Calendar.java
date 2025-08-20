@@ -38,17 +38,61 @@ public class DT_Calendar {
 //        System.out.println(date.getYear()+"-"+ date.getDate());
 
         //取上月份的第一天和最后一天
+//        Calendar calendar = Calendar.getInstance();
+//        //上个月第一天
+//        calendar.add(Calendar.MONTH,-1);
+//        calendar.set(Calendar.DAY_OF_MONTH,1);
+//        System.out.println(calendar.getTime());
+//        //上个月最后一弹
+//        calendar.add(Calendar.MONTH, 1);
+//        calendar.add(Calendar.DATE, -1);
+//        System.out.println(calendar.getTime());
+//        //会计期间
+//        System.out.println(calendar.get(Calendar.YEAR));
+//        System.out.println(calendar.get(Calendar.MONTH)+1);
+
+
+//        // 获取当前日期的Date对象
+//        Date currentDate = new Date();
+//
+//        // 使用Calendar类设置到当前日期
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(currentDate);
+//
+//        // 将日历的日期设置为本月最后一天
+//        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+//
+//        // 获取并打印本月最后一天的日期
+//        Date lastDayOfMonth = calendar.getTime();
+//        System.out.println("本月最后一天的日期是: " + lastDayOfMonth);
+
+        Date currentDate = new Date();
+        Calendar cal1 = Calendar.getInstance();
+        cal1.setTime(currentDate);
+        cal1.add(Calendar.MONTH,-12);
+        Date startDate = cal1.getTime();
+        Date endDate = currentDate;
+
+        // 使用Calendar类设置到当前日期
         Calendar calendar = Calendar.getInstance();
-        //上个月第一天
-        calendar.add(Calendar.MONTH,-1);
-        calendar.set(Calendar.DAY_OF_MONTH,1);
-        System.out.println(calendar.getTime());
-        //上个月最后一弹
-        calendar.add(Calendar.MONTH, 1);
-        calendar.add(Calendar.DATE, -1);
-        System.out.println(calendar.getTime());
-        //会计期间
-        System.out.println(calendar.get(Calendar.YEAR));
-        System.out.println(calendar.get(Calendar.MONTH)+1);
+        calendar.setTime(startDate);
+        // 将日历的日期设置为本月最后一天
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        // 获取并打印本月最后一天的日期
+        Date currDate = calendar.getTime();
+
+        System.out.println("开始日期是: " + startDate);
+        System.out.println("结束日期是: " + endDate);
+        //System.out.println(endDate.after(currDate));
+        for (;endDate.after(currDate);){
+            //retList.add(currDate);
+            System.out.println("日期是: " + currDate.getYear()+currDate.getMonth()+currDate.getDate());
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(currDate);
+            cal.add(Calendar.MONTH,1);
+            cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+            currDate = cal.getTime();
+        }
+
     }
 }

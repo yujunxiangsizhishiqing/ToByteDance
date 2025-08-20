@@ -1,5 +1,7 @@
 package demoPackage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class DT_Future {
@@ -51,29 +53,46 @@ public class DT_Future {
      * 以便可以并发地执行多个任务，并等待它们的结果
      * */
     public void futureTest2(){
+        //最大线程池大小
+        int maxFutureTask = 3;
         // 创建一个固定大小的线程池
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-
+        ExecutorService executor = Executors.newFixedThreadPool(maxFutureTask);
+        //任务列表
+        List<Future<Integer>> futures = new ArrayList<>();
         // 创建 CompletionService 来管理 Future
         CompletionService<Integer> completionService = new ExecutorCompletionService<>(executor);
 
         // 提交多个任务给线程池执行，并将 Future 注册到 CompletionService 中
         for (int i = 0; i < 5; i++) {
-            completionService.submit(new MyCallable(i));
+            futures.add(completionService.submit(new MyCallable(i)));
         }
 
-        // 循环等待每个任务的执行结果
-        for (int i = 0; i < 5; i++) {
-            try {
-                // 获取已完成的任务结果
-                Future<Integer> future = completionService.take();
+        try {
+            for (Future<Integer> future : futures) {
                 // 阻塞等待任务执行结果，并获取结果
                 int result = future.get();
                 System.out.println("任务执行结果：" + result);
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
             }
+        }catch (Exception e){
+            e.printStackTrace();
+            //throw e;
+        } finally {
+            executor.shutdown(); // 关闭线程池
         }
+
+
+        // 循环等待每个任务的执行结果
+//        for (int i = 0; i < 5; i++) {
+//            try {
+//                // 获取已完成的任务结果
+//                Future<Integer> future = completionService.take();
+//                // 阻塞等待任务执行结果，并获取结果
+//                int result = future.get();
+//                System.out.println("任务执行结果：" + result);
+//            } catch (InterruptedException | ExecutionException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
         // 关闭线程池
         executor.shutdown();

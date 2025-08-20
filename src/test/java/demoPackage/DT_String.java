@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class DT_String {
 
@@ -103,16 +104,34 @@ public class DT_String {
 //        String str3 = "2024-07-09";
 //        System.out.println(str3.indexOf("-"));
 
-//        System.out.println(String.format("%02d", 6));
-//        System.out.println(String.format("%02d", 12));
+//        System.out.println(String.format("%05d", 6));
+//        System.out.println(String.format("%05d", 12));
+//
+//        System.out.println(String.format("%10s", "12").replace(" ","*"));
+//        System.out.println(String.format("%-10s", "12").replace(" ","*"));
+//        System.out.println(String.format("%-10s", "核心系统").replace(" ","*"));
+//        System.out.println(String.format("%-10s", "计量").replace(" ","*"));
+//
+//        Date date = new Date();
+//        int year = date.getYear()+1900;
+//        int month = date.getMonth();
+//        System.out.println(year+"-"+(String.format("%02d",month)));
+//
+//
+//        System.out.println("123".equals(null));
 
-        Date date = new Date();
-        int year = date.getYear()+1900;
-        int month = date.getMonth();
-        System.out.println(year+"-"+(String.format("%02d",month)));
 
+//        List<String> list = new ArrayList<>();
+//        list.add("1");
+//        list.addAll(null);
 
-        System.out.println("123".equals(null));
+/*        System.out.println(String.format("%s123","aaa"));
+
+        System.out.println(String.format("%s-%s","a","b"));
+
+        System.out.println("10".equals(null));*/
+
+        System.out.println(Boolean.FALSE.toString());
     }
 
     private static String test1(){

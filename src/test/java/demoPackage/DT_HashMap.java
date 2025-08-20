@@ -16,5 +16,14 @@ public class DT_HashMap {
         for (Map.Entry<Object, Object> entry : entries) {
             System.out.println(entry.getValue());
         }
+
+        System.out.println(map.containsKey("a"));
+        System.out.println(map.containsKey(null));
+
+        map.put("a","222");
+        System.out.println(map.get("a"));
+        for (Map.Entry<Object, Object> entry : entries) {
+            System.out.println(entry.getValue());
+        }
     }
 }
